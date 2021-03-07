@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuentra alojamineto Airbnbn</title>
+    <link rel="stylesheet" href="./dist/css/tailwind.css" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="px-16 py-6 text-white font-semibold" id="header">
+      <!-- Navigation -->
+      <div class="w-full h-16 flex justify-between" id="navbar">
+        <div>
+          <a href="/" class="text-lg font-bold logo ml-1">
+            <i class="fab fa-airbnb mr-1 text-2xl"></i>airbnb-clone</a
+          >
+        </div>
+
+        <nav class="navigation">
+          <ul class="flex items-center">
+            <li
+              class="text-sm mr-3 bg-white px-3 py-2 rounded-lg text-gray-900 hover:bg-gray-100"
+            >
+              <a href="#" class="font-semibold">Conviértete en anfitrión</a>
+            </li>
+            <li class="text-sm mr-3">
+              <a href="#" class="font-semibold">Ayuda</a>
+            </li>
+            <li class="text-sm mr-3">
+              <a href="#" class="font-semibold">Registrate</a>
+            </li>
+            <li class="text-sm mr-3">
+              <a href="#" class="font-semibold">Iniciar sesión</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Forrm de alojamiento -->
+      <div class="w-10/12 mx-auto">
+        <form method="post" class="bg-white text-gray-900 p-9 w-2/4 rounded-lg">
+          <!-- Enacabezado del formulario -->
+          <div class="mb-5">
+            <h2 class="text-3xl font-bold mb-2">
+              Encuentra alojamiento en México con Airbnb
+            </h2>
+            <p class="text-base text-gray-600 font-thin">
+              Descubre alojamientos enteros y habitaciones privadas, perfecto
+              para cualquier viaje.
+            </p>
+          </div>
+          <!-- Ubicacion del lugar destino -->
+          <div>
+            <label for="ubicacción" class="absolute px-3 pt-2 text-xs uppercase"
+              >Ubicación</label
+            >
+            <input
+              type="text"
+              name="ubicacion"
+              placeholder="Cualquier lugar"
+              value="México"
+              class="w-full px-3 pt-6 pb-1 border-2 border-gray-800 align-bottom font-extralight placeholder-gray-700 rounded-md focus:outline-none"
+              id="ibicacion"
+            />
+          </div>
+
+          <!-- Fecha de entrada y salida -->
+          <div class="grid grid-cols-2 gap-3 mt-5">
+            <div>
+              <label for="llegada" class="absolute px-3 pt-2 text-xs uppercase"
+                >Llegada</label
+              >
+              <input
+                type="date"
+                name="llegada"
+                placeholder="Agrega la fecha"
+                class="w-full px-3 pt-6 pb-1 border-2 border-gray-800 align-bottom font-extralight placeholder-gray-700 rounded-md focus:outline-none"
+                id="llegada"
+              />
+            </div>
+
+            <div>
+              <label for="salida" class="absolute px-3 pt-2 text-xs uppercase"
+                >Salida</label
+              >
+              <input
+                type="date"
+                name="salida"
+                placeholder="Agrega la fecha"
+                class="w-full px-3 pt-6 pb-1 border-2 border-gray-800 align-bottom font-extralight placeholder-gray-100 rounded-md focus:outline-none"
+                id="salida"
+                step=""
+              />
+            </div>
+          </div>
+
+          <!-- Nmero y tipos de personas -->
+          <div class="grid grid-cols-2 gap-3 mt-5">
+            <div>
+              <label for="adultos" class="absolute px-3 pt-2 text-xs uppercase"
+                >Adultos</label
+              >
+              <select
+                name="adultos"
+                id="adultos"
+                class="w-full px-3 pt-6 pb-1 appearance-none border-2 border-gray-800 align-bottom font-extralight placeholder-gray-100 rounded-md bg-gray-50 focus:outline-none"
+              >
+                <optgroup>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </optgroup>
+              </select>
+              <span
+                class="iconify relative -top-8 -right-44"
+                data-icon="dashicons:arrow-down-alt2"
+                data-inline="false"
+              ></span>
+            </div>
+
+            <div>
+              <label for="boys" class="absolute px-3 pt-2 text-xs uppercase"
+                >Ñiños</label
+              >
+              <select
+                name="boys"
+                id="boys"
+                class="w-full px-3 pt-6 pb-1 appearance-none border-2 border-gray-800 align-bottom font-extralight placeholder-gray-100 rounded-md bg-gray-50 focus:outline-none"
+              >
+                <optgroup>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </optgroup>
+              </select>
+              <span
+                class="iconify relative -top-8 -right-44"
+                data-icon="dashicons:arrow-down-alt2"
+                data-inline="false"
+              ></span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button
+              type="submit"
+              class="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <!-- secction one -->
+    <div class="mt-10">
+      <div class="w-10/12 mx-auto grid grid-cols-2 p-10">
+        <!-- Promoción -->
+        <div class="pl-10 pt-10 pr-16">
+          <p class="text-3xl font-semibold text-gray-800 mb-10">
+            Gana hasta $9,022 MXNpor mes al hospedar viajeros
+          </p>
+
+          <a
+            href="#"
+            class="border border-gray-600 px-5 py-2 text-lg font-semibold rounded-md"
+            >Descubre cómo <span class="text-xl font-thin">></span></a
+          >
+        </div>
+
+        <!-- Image -->
+        <div>
+          <img
+            src="./dist/img/joel-protasio-ZTaixh3Yc8s-unsplash.jpg"
+            class="rounded-md shadow-md w-full"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="w-10/12 mx-auto">
+      <!-- Secction two -->
+      <!-- Banner -->
+      <div>
+        <!-- Banner -->
+        <div class="rounded-md" id="banner">
+          <!-- Secction pharagraft -->
+          <div class="bg-gray-900 bg-opacity-25 p-10">
+            <h4 class="text-3xl font-semibold text-white w-96">
+              Viajar cerca está de moda
+            </h4>
+            <p class="my-5 text-white text-sm w-96">
+              Quédate por un tiempo en un lugar nuevo. Descubre alojamientos
+              cercanos donde vivir, trabajar o simplemente relajarte
+            </p>
+
+            <a
+              href="#"
+              class="bg-white text-sm text-gray-700 rounded-md px-5 py-3 font-semibold border border-gray-300"
+              >Explora los alrededores</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Contendio de los lugares de hospedaje -->
+      <div>
+        <!-- Conetent -->
+        <div class="mt-16">
+          <h4 class="text-2xl font-semibold">
+            Lo que dicen los huéspedes sobre los alogamientos en México
+          </h4>
+          <p class="text-base font-semibold text-gray-600">
+            Más de <b>5.000.000 evalución de huéspedes,</b> con un promedio de
+            <b>4.7 de 5 estrellas</b>
+          </p>
+        </div>
+
+        <!-- Show images  -->
+        <div>
+          <!-- Lugar one -->
+          <div class="grid grid-cols-3 gap-4 mt-5">
+            <!-- Image -->
+            <div>
+              <div>
+                <img
+                  src="./dist/img/rowan-simpson-NXRQqPV7KEo-unsplash.jpg"
+                  class="w-full h-72 rounded-md"
+                  alt=""
+                />
+              </div>
+              <!-- valoracion -->
+              <div class="flex my-3">
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+              </div>
+
+              <p class="text-sm font-thin text-gray-800">
+                "Cathy es maravillosa! Me estuvo escribiendo con instrucciones y
+                tips para mi viaje; llegando al studio nos recibio con un plato
+                de quesos y..."
+              </p>
+
+              <!-- Profile -->
+              <div class="grid grid-cols-5 mt-2">
+                <!-- Img profile -->
+                <div class="flex items-center">
+                  <img
+                    src="./dist/img/joel-protasio-ZTaixh3Yc8s-unsplash.jpg"
+                    class="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+                </div>
+                <div class="text-sm">
+                  <h2 class="font-semibold">Leda</h2>
+                  <h2 class="text-gray-800">México</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div>
+              <div>
+                <img
+                  src="./dist/img/evangelos-mpikakis-yA3nQy9fp9g-unsplash.jpg"
+                  class="w-full h-72 rounded-md"
+                  alt=""
+                />
+              </div>
+
+              <!-- valoracion -->
+              <div class="flex my-3">
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+              </div>
+
+              <p class="text-sm font-thin text-gray-800">
+                "Cathy es maravillosa! Me estuvo escribiendo con instrucciones y
+                tips para mi viaje; llegando al studio nos recibio con un plato
+                de quesos y..."
+              </p>
+
+              <!-- Profile -->
+              <div class="grid grid-cols-5 mt-2">
+                <!-- Img profile -->
+                <div class="flex items-center">
+                  <img
+                    src="./dist/img/joel-protasio-ZTaixh3Yc8s-unsplash.jpg"
+                    class="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+                </div>
+                <div class="text-sm">
+                  <h2 class="font-semibold">Leda</h2>
+                  <h2 class="text-gray-800">México</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div>
+              <div>
+                <img
+                  src="./dist/img/woodendot-E8ajXo0KIKM-unsplash.jpg"
+                  class="w-full h-72 rounded-md"
+                  alt=""
+                />
+              </div>
+              <!-- valoracion -->
+              <div class="flex my-3">
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+                <span
+                  class="iconify text-pink-700 text-xl"
+                  data-icon="ant-design:star-outlined"
+                  data-inline="false"
+                ></span>
+              </div>
+
+              <p class="text-sm font-thin text-gray-800">
+                "Cathy es maravillosa! Me estuvo escribiendo con instrucciones y
+                tips para mi viaje; llegando al studio nos recibio con un plato
+                de quesos y..."
+              </p>
+
+              <!-- Profile -->
+              <div class="grid grid-cols-5 mt-2">
+                <!-- Img profile -->
+                <div class="flex items-center">
+                  <img
+                    src="./dist/img/joel-protasio-ZTaixh3Yc8s-unsplash.jpg"
+                    class="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+                </div>
+                <div class="text-sm">
+                  <h2 class="font-semibold">Leda</h2>
+                  <h2 class="text-gray-800">México</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- section of info -->
+
+        <hr class="my-12" />
+
+        <div class="grid grid-cols-3 gap-5">
+          <div>
+            <span
+              class="iconify text-4xl"
+              data-icon="ic:outline-mark-chat-unread"
+              data-inline="false"
+            ></span>
+            <h2 class="text-xl font-semibold text-gray-900 mt-3">
+              Servicio al cliente las 24 horas, los 7 días de la semana
+            </h2>
+            <p class="mt-2 text-base text-gray-800">
+              De día o de noche, estamos aquí para ayudarte. Habla con nuestro
+              equipo de atención al cliente estés donde estés y a cualquier
+              hora.
+            </p>
+          </div>
+
+          <div>
+            <span
+              class="iconify text-4xl"
+              data-icon="ic:outline-home"
+              data-inline="false"
+            ></span>
+            <h2 class="text-xl font-semibold text-gray-900 mt-3">
+              Requisitos internacionales de hospedaje
+            </h2>
+            <p class="mt-2 text-base text-gray-800">
+              Todos los anfitriones deben cumplir con los requisitos de
+              hospedaje y tener una calificación mínima para formar parte de
+              Airbnb.
+            </p>
+          </div>
+
+          <div>
+            <span
+              class="iconify text-4xl"
+              data-icon="ic:twotone-star-outline"
+              data-inline="false"
+            ></span>
+            <h2 class="text-xl font-semibold text-gray-900 mt-3">
+              Anfitriones estrella
+            </h2>
+            <p class="mt-2 text-base text-gray-800">
+              Disfruta de sábanas recién puestas y escucha sus consejos sobre
+              los mejores lugares para tomar el brunch: nuestros anfitriones son
+              el mejor ejemplo de hospitalidad local.
+            </p>
+          </div>
+        </div>
+
+        <hr class="my-12" />
+
+        <section id="reservado">
+          <div class="grid grid-cols-4 gap-3">
+            <div>
+              <a href="#">
+                <!-- image -->
+                <img
+                  src="./dist/img/reservado/1.jpg"
+                  class="rounded"
+                  alt="imagen one"
+                />
+                <!-- tags -->
+                <div class="flex justify-between items-center mt-3">
+                  <div class="flex items-center text-xs">
+                    <b
+                      class="border border-gray-800 px-1 py-1 uppercase rounded-md"
+                      >superanfitrión</b
+                    >
+                    <span class="text-gray-600">Casa miniatura</span>
+                  </div>
+
+                  <div class="flex items-center text-xs">
+                    <span
+                      class="iconify text-pink-700"
+                      data-icon="ant-design:star-outlined"
+                      data-inline="false"
+                    ></span>
+                    4.66
+                  </div>
+                </div>
+                <!-- info -->
+                <p class="text-base text-gray-900 mt-1 truncate">
+                  Radiant Apartment with Terrace in Roma Norte
+                </p>
+                <!-- price -->
+                <p class="text-base text-gray-900">
+                  <b>$1466 MXN</b> por noche
+                </p>
+              </a>
+            </div>
+
+            <div>
+              <a href="#">
+                <!-- image -->
+                <img
+                  src="./dist/img/reservado/2.jpg"
+                  class="rounded"
+                  alt="imagen one"
+                />
+                <!-- tags -->
+                <div class="flex justify-between items-center mt-3">
+                  <div class="flex items-center text-xs">
+                    <b
+                      class="border border-gray-800 px-1 py-1 uppercase rounded-md"
+                      >superanfitrión</b
+                    >
+                    <span class="text-gray-600">Casa grande</span>
+                  </div>
+
+                  <div class="flex items-center text-xs">
+                    <span
+                      class="iconify text-pink-700"
+                      data-icon="ant-design:star-outlined"
+                      data-inline="false"
+                    ></span>
+                    4.85
+                  </div>
+                </div>
+                <!-- info -->
+                <p class="text-base text-gray-900 mt-1 truncate">
+                  Radiant Apartment with Terrace in Roma Norte
+                </p>
+                <!-- price -->
+                <p class="text-base text-gray-900">
+                  <b>$1,600 MXN</b> por noche
+                </p>
+              </a>
+            </div>
+
+            <div>
+              <a href="#">
+                <!-- image -->
+                <img
+                  src="./dist/img/reservado/3.jpg"
+                  class="rounded"
+                  alt="imagen one"
+                />
+                <!-- tags -->
+                <div class="flex justify-between items-center mt-3">
+                  <div class="flex items-center text-xs">
+                    <b
+                      class="border border-gray-800 px-1 py-1 uppercase rounded-md"
+                      >superanfitrión</b
+                    >
+                    <span class="text-gray-600">Casa miniatura</span>
+                  </div>
+
+                  <div class="flex items-center text-xs">
+                    <span
+                      class="iconify text-pink-700"
+                      data-icon="ant-design:star-outlined"
+                      data-inline="false"
+                    ></span>
+                    4.66
+                  </div>
+                </div>
+                <!-- info -->
+                <p class="text-base text-gray-900 mt-1 truncate">
+                  Radiant Apartment with Terrace in Roma Norte
+                </p>
+                <!-- price -->
+                <p class="text-base text-gray-900"><b>$960 MXN</b> por noche</p>
+              </a>
+            </div>
+
+            <div>
+              <a href="#">
+                <!-- image -->
+                <img
+                  src="./dist/img/reservado/4.jpg"
+                  class="rounded"
+                  alt="imagen one"
+                />
+                <!-- tags -->
+                <div class="flex justify-between items-center mt-3">
+                  <div class="flex items-center text-xs">
+                    <b
+                      class="border border-gray-800 px-1 py-1 uppercase rounded-md"
+                      >superanfitrión</b
+                    >
+                    <span class="text-gray-600">Casa grande</span>
+                  </div>
+
+                  <div class="flex items-center text-xs">
+                    <span
+                      class="iconify text-pink-700"
+                      data-icon="ant-design:star-outlined"
+                      data-inline="false"
+                    ></span>
+                    4.90
+                  </div>
+                </div>
+                <!-- info -->
+                <p class="text-base text-gray-900 mt-1 truncate">
+                  Radiant Apartment with Terrace in Roma Norte
+                </p>
+                <!-- price -->
+                <p class="text-base text-gray-900">
+                  <b>$2000 MXN</b> por noche
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class="my-10">
+          <a
+            href="#"
+            class="w-20 px-4 py-3 border border-gray-800 text-base font-semibold rounded-lg hover:bg-gray-100"
+          >
+            Mostrar (más de 2000) <b>></b>
+          </a>
+        </div>
+
+        <section class="mt-10">
+          <h2 class="text-2xl font-semibold">¿Cuándo viajas?</h2>
+          <p class="text-base text-gray-600 mt-2">
+            Agrega fechas para ver la disponibilidad y actualizar los precios
+          </p>
+
+          <button
+            class="px-4 py-3 text-base font-semibold text-gray-50 bg-gray-800 mt-6 rounded-lg hover:bg-gray-900"
+          >
+            Agregar fechas
+          </button>
+
+          <div class="flex my-8">
+            <a href="#" class="text-base font-semibold underline">Airbnb</a>
+            <span class="mx-2">></span>
+            <a href="#" class="text-base font-semibold underline">Estancias</a>
+            <span class="mx-2">></span>
+            <p>México</p>
+          </div>
+        </section>
+
+        <hr class="mt-5 mb-2" />
+        <footer class="flex justify-between">
+          <div class="text-xs text-gray-800 pb-12">
+            <ul class="flex justify-between">
+              <li class="mr-2">&copy; 2021 Airbnb-Clone, Inc. All right reservad</li>
+              <li class="mr-2">.</li>
+              <li class="mr-2 hover:underline">
+                <a href="#">Privacidad</a>
+              </li>
+              <li class="mr-2">.</li>
+
+              <li class="mr-2 hover:underline">
+                <a href="#">Condiciones</a>
+              </li>
+              <li class="mr-2">.</li>
+
+              <li>
+                <a href="#" class="hover:underline">Mapa del sitio</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="redes">
+            <ul class="flex">
+              <li>
+                <a href="#">
+                  <span
+                    class="iconify text-lg mr-3"
+                    data-icon="ic:outline-facebook"
+                    data-inline="false"
+                  ></span
+                ></a>
+              </li>
+
+              <li>
+                <a href="#"
+                  ><span
+                    class="iconify text-lg mr-3"
+                    data-icon="mdi:twitter"
+                    data-inline="false"
+                  ></span
+                ></a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <span
+                    class="iconify text-lg"
+                    data-icon="mdi:instagram"
+                    data-inline="false"
+                  ></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  </body>
+</html>
